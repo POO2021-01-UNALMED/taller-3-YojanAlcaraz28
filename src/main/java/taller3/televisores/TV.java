@@ -4,18 +4,18 @@ import java.util.ArrayList;
 
 public class TV {
 	public Marca marca;
-	private int canal = 1;
+	public int canal = 1;
 	private int precio = 500;
-	private boolean estado;
-	private int volumen = 1;
+	public boolean estado;
+	public int volumen = 1;
 	public Control control;
 	private static TV numTV;
-	
-	public TV(String marca, String estado) {
+
+	public TV(Marca marca, boolean estado) {
 
 	}
 
-	public String getMarca() {
+	public Marca getMarca() {
 		return this.marca;
 	}
 
@@ -23,7 +23,7 @@ public class TV {
 		this.marca = marca;
 	}
 
-	public String getControl() {
+	public Control getControl() {
 		return this.control;
 
 	}
@@ -56,18 +56,8 @@ public class TV {
 		this.canal = canal;
 	}
 
-	public static int getnumTV() {
+	public static TV getnumTV() {
 		return numTV;
-	}
-
-	public void turnOn(boolean estado) {
-		if (estado) {
-			estado = true;
-		}
-	}
-
-	public void turnOff(boolean estado) {
-		return;
 	}
 
 	boolean getEstado() {
@@ -75,40 +65,4 @@ public class TV {
 
 	}
 
-	public void CanalUp() {
-		if (estado = true) {
-
-			while (canal >= 1 && canal <= 120) {
-				canal += 1;
-			}
-
-		}
-
-	}
-
-	public void CanalDown() {
-		if (estado = true) {
-			while (canal >= 1 && canal <= 120) {
-				canal -= 1;
-			}
-		}
-
-	}
-
-	public void volumenUp() {
-		if (estado = true) {
-			while (volumen >= 0 && volumen <= 7) {
-				volumen += 1;
-			}
-
-		}
-	}
-
-	public void volumenDown() {
-		if (estado = true) {
-			while (volumen >= 0 && volumen <= 7) {
-				volumen -= 1;
-			}
-		}
-	}
 }
