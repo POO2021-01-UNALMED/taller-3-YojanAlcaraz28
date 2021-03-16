@@ -1,6 +1,5 @@
 package taller3.televisores;
 
-import java.util.ArrayList;
 
 public class TV {
 	public Marca marca;
@@ -48,12 +47,49 @@ public class TV {
 		this.volumen = volumen;
 	}
 
+	public void volumenUp() {
+		if (estado = true) {
+			while (volumen >= 0 && volumen <= 7) {
+				volumen += 1;
+			}
+
+		}
+	}
+
+	public void volumenDown() {
+		if (estado = true) {
+			while (volumen >= 0 && volumen <= 7) {
+				canal -= 1;
+			}
+		}
+	}
+
 	public int getCanal() {
 		return this.canal;
 	}
 
 	public void setCanal(int canal) {
 		this.canal = canal;
+	}
+
+	public void CanalUp() {
+		if (estado = true) {
+
+			while (canal >= 1 && canal <= 120) {
+				canal += 1;
+			}
+
+		}
+
+	}
+
+	public void CanalDown() {
+		if (estado = true) {
+			while (canal >= 1 && canal <= 120) {
+				canal -= 1;
+			}
+		}
+
 	}
 
 	public static TV getnumTV() {
@@ -63,6 +99,16 @@ public class TV {
 	boolean getEstado() {
 		return estado;
 
+	}
+
+	public void turnOn(boolean estado) {
+		if (estado) {
+			estado = true;
+		}
+	}
+
+	public void turnOff(boolean estado) {
+		return;
 	}
 
 }
