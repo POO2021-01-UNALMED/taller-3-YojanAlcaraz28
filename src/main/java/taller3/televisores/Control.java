@@ -31,7 +31,7 @@ public class Control {
 		if (tv.estado == false) {
 			return;
 		}
-		if (tv.canal >= 120) {
+		if (tv.canal > 120) {
 			return;
 		}
 		++tv.canal;
@@ -51,29 +51,32 @@ public class Control {
 		if (tv.estado == false) {
 			return;
 		}
-		if (tv.canal <=1) {
+		if (tv.canal < 1) {
 			return;
 		}
 		--tv.canal;
 	}
 
 	public void volumenUp() {
-		if (tv.estado = true) {
-			while (tv.volumen >= 0 && tv.volumen <= 7) {
-				tv.volumen += 1;
-			}
-
+		if (tv.estado == false) {////false
+			return;
 		}
+		if (tv.volumen > 7) {
+			return;
+		}
+		++tv.canal;
+
 	}
 
 	public void volumenDown() {
-		if (tv.estado = true) {
-			while (tv.volumen >= 0 && tv.volumen <= 7) {
-				tv.canal -= 1;
-			}
+		if (tv.estado == false) {
+			return;
 		}
+		if (tv.volumen < 0) {
+			return;
+		}
+		--tv.canal;
 	}
-	
 	public void setCanal(int canal) {
 		this.tv.canal = canal;
 	}

@@ -52,14 +52,14 @@ public class TV {
 		if (volumen > 7) {
 			return;
 		}
-		++canal;
+		
 		if (estado == false) {////false
 			return;
 		}
 		if (volumen < 0) {
 			return;
 		}
-		--canal;
+		
 		this.volumen = volumen;
 	}
 
@@ -70,7 +70,7 @@ public class TV {
 		if (volumen > 7) {
 			return;
 		}
-		++canal;
+		
 
 	}
 
@@ -81,7 +81,7 @@ public class TV {
 		if (volumen < 0) {
 			return;
 		}
-		--canal;
+		
 	}
 
 	public int getCanal() {
@@ -89,20 +89,20 @@ public class TV {
 	}
 
 	public void setCanal(int canal) {
-		if (estado == false) {///false
+		if (estado == false) {
 			return;
 		}
 		if (canal > 120) {
 			return;
 		}
-		++canal;
+		
 		if (estado == false) {
 			return;
 		}
 		if (canal < 1) {
 			return;
 		}
-		--canal;
+		
 		this.canal = canal;
 	}
 
