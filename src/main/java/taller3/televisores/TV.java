@@ -49,14 +49,7 @@ public class TV {
 		if (estado == false) {
 			return;
 		}
-		if (volumen > 7) {
-			return;
-		}
-		
-		if (estado == false) {////false
-			return;
-		}
-		if (volumen < 0) {
+		if (volumen >= 7 || volumen <= 0) {
 			return;
 		}
 		
@@ -64,10 +57,10 @@ public class TV {
 	}
 
 	public void volumenUp() {
-		if (estado == false) {////false
+		if (estado == false) {
 			return;
 		}
-		if (volumen > 7) {
+		if (volumen >= 7) {
 			return;
 		}
 		
@@ -78,7 +71,7 @@ public class TV {
 		if (estado == false) {
 			return;
 		}
-		if (volumen < 0) {
+		if (volumen <= 0) {
 			return;
 		}
 		
@@ -92,14 +85,7 @@ public class TV {
 		if (estado == false) {
 			return;
 		}
-		if (canal > 120) {
-			return;
-		}
-		
-		if (estado == false) {
-			return;
-		}
-		if (canal < 1) {
+		if (canal >= 120 || canal <= 1) {
 			return;
 		}
 		
@@ -145,7 +131,7 @@ public class TV {
 		if (estado == false) {
 			return;
 		}
-		if (canal > 120) {
+		if (canal >= 120) {
 			return;
 		}
 		++canal;
@@ -160,7 +146,7 @@ public class TV {
 		if (estado == false) {
 			return;
 		}
-		if (canal < 1) {
+		if (canal <= 1) {
 			return;
 		}
 		--canal;

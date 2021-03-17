@@ -31,7 +31,7 @@ public class Control {
 		if (tv.estado == false) {
 			return;
 		}
-		if (tv.canal > 120) {
+		if (tv.canal >= 120) {
 			return;
 		}
 		++tv.canal;
@@ -51,7 +51,7 @@ public class Control {
 		if (tv.estado == false) {
 			return;
 		}
-		if (tv.canal < 1) {
+		if (tv.canal <= 1) {
 			return;
 		}
 		--tv.canal;
@@ -61,7 +61,7 @@ public class Control {
 		if (tv.estado == false) {////false
 			return;
 		}
-		if (tv.volumen > 7) {
+		if (tv.volumen >= 7) {
 			return;
 		}
 		++tv.canal;
@@ -72,7 +72,7 @@ public class Control {
 		if (tv.estado == false) {
 			return;
 		}
-		if (tv.volumen < 0) {
+		if (tv.volumen <= 0) {
 			return;
 		}
 		--tv.canal;
