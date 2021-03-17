@@ -12,6 +12,7 @@ public class TV {
 
 	public TV(Marca marca, boolean estado) {
 		TV.numTV++;
+		this.estado = estado;
 
 	}
 
@@ -97,6 +98,7 @@ public class TV {
 	
 	public boolean getEstado() {
 		return estado;
+	
 
 	}
 	
