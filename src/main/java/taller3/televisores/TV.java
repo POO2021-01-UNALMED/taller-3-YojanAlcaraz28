@@ -8,9 +8,10 @@ public class TV {
 	public boolean estado;
 	public int volumen = 1;
 	public Control control;
-	static  TV numTV;
+	static  int numTV;
 
 	public TV(Marca marca, boolean estado) {
+		TV.numTV++;
 
 	}
 
@@ -74,12 +75,12 @@ public class TV {
 
 	
 	
-	public static TV getnumTV() {
+	public static int getNumTV() {
 		return numTV;
 	}
 	
-	public void setNumTV(TV numTV) {
-		this.numTV = numTV;
+	public static void setNumTV(int numTV) {
+		TV.numTV = numTV;
 	}
 	
 	public void turnOn() {
@@ -128,7 +129,7 @@ public class TV {
 			}
 		}*/
 	
-	public void CanalDown() {
+	public void canalDown() {
 		if (estado == false) {
 			return;
 		}

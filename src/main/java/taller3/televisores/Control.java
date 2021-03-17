@@ -47,7 +47,7 @@ public class Control {
 
 	}*/
 	
-	public void CanalDown() {
+	public void canalDown() {
 		if (tv.estado == false) {
 			return;
 		}
