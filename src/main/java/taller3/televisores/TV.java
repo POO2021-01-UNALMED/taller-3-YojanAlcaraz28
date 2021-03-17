@@ -46,14 +46,14 @@ public class TV {
 	}
 
 	public void setVolumen(int volumen) {
-		if (estado == false) {
+		if (estado == true) {
 			return;
 		}
 		if (volumen >= 7) {
 			return;
 		}
 		++canal;
-		if (estado == false) {
+		if (estado == true) {////false
 			return;
 		}
 		if (volumen <= 0) {
@@ -64,7 +64,7 @@ public class TV {
 	}
 
 	public void volumenUp() {
-		if (estado == false) {
+		if (estado == true) {////false
 			return;
 		}
 		if (volumen >= 7) {
@@ -75,7 +75,7 @@ public class TV {
 	}
 
 	public void volumenDown() {
-		if (estado == false) {
+		if (estado == true) {
 			return;
 		}
 		if (volumen <= 0) {
@@ -89,14 +89,14 @@ public class TV {
 	}
 
 	public void setCanal(int canal) {
-		if (estado == false) {
+		if (estado == true) {///false
 			return;
 		}
 		if (canal >= 120) {
 			return;
 		}
 		++canal;
-		if (estado == false) {
+		if (estado == true) {
 			return;
 		}
 		if (canal <= 1) {
@@ -142,7 +142,7 @@ public class TV {
 	 */
 
 	public void canalUp() {
-		if (estado == false) {
+		if (estado == true) {
 			return;
 		}
 		if (canal >= 120) {
@@ -157,7 +157,7 @@ public class TV {
 	 */
 
 	public void canalDown() {
-		if (estado == false) {
+		if (estado == true) {
 			return;
 		}
 		if (canal <= 1) {
