@@ -1,14 +1,13 @@
 package taller3.televisores;
 
-
 public class TV {
 	public Marca marca;
-	public int canal = 1;  /////static
+	public int canal = 1; ///// static
 	private int precio = 500;
 	public boolean estado;
 	public int volumen = 1;
 	public Control control;
-	static  int numTV;
+	static int numTV;
 
 	public TV(Marca marca, boolean estado) {
 		TV.numTV++;
@@ -47,6 +46,20 @@ public class TV {
 	}
 
 	public void setVolumen(int volumen) {
+		if (estado == false) {
+			return;
+		}
+		if (volumen >= 7) {
+			return;
+		}
+		++canal;
+		if (estado == false) {
+			return;
+		}
+		if (volumen <= 0) {
+			return;
+		}
+		--canal;
 		this.volumen = volumen;
 	}
 
@@ -59,14 +72,13 @@ public class TV {
 		}
 		++canal;
 
-		}
-	
+	}
 
 	public void volumenDown() {
 		if (estado == false) {
 			return;
 		}
-		if (volumen <=0) {
+		if (volumen <= 0) {
 			return;
 		}
 		--canal;
@@ -77,19 +89,31 @@ public class TV {
 	}
 
 	public void setCanal(int canal) {
+		if (estado == false) {
+			return;
+		}
+		if (canal >= 120) {
+			return;
+		}
+		++canal;
+		if (estado == false) {
+			return;
+		}
+		if (canal <= 1) {
+			return;
+		}
+		--canal;
 		this.canal = canal;
 	}
 
-	
-	
 	public static int getNumTV() {
 		return numTV;
 	}
-	
+
 	public static void setNumTV(int numTV) {
 		TV.numTV = numTV;
 	}
-	
+
 	public void turnOn() {
 		if (estado == false) {
 			estado = true;
@@ -101,24 +125,22 @@ public class TV {
 			estado = false;
 		}
 	}
-	
+
 	public boolean getEstado() {
 		return estado;
-	
 
 	}
-	
-	/*public void CanalUp() {
-		if (estado = true) {
 
-			while (canal >= 1 && canal <= 120) {
-				canal += 1;
-			}
+	/*
+	 * public void CanalUp() { if (estado = true) {
+	 * 
+	 * while (canal >= 1 && canal <= 120) { canal += 1; }
+	 * 
+	 * }
+	 * 
+	 * }
+	 */
 
-		}
-
-	}*/
-	
 	public void canalUp() {
 		if (estado == false) {
 			return;
@@ -129,30 +151,19 @@ public class TV {
 		++canal;
 	}
 
+	/*
+	 * public void CanalDown() { if (estado = true) { while (canal >= 1 && canal <=
+	 * 120) { canal -= 1; } }
+	 */
 
-	/*public void CanalDown() {
-		if (estado = true) {
-			while (canal >= 1 && canal <= 120) {
-				canal -= 1;
-			}
-		}*/
-	
 	public void canalDown() {
 		if (estado == false) {
 			return;
 		}
-		if (canal <=1) {
+		if (canal <= 1) {
 			return;
 		}
 		--canal;
 	}
 
-	}
-
-	
-
-	
-
-	
-
-
+}
