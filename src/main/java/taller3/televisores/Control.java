@@ -1,36 +1,60 @@
 package taller3.televisores;
 
 public class Control {
-	private TV tv;
+	public TV tv;
 	
-	public void turnOn(boolean estado) {
-		if (estado) {
-			estado = true;
+	public void turnOn() {
+		if (tv.estado == false) {
+			tv.estado = true;
 		}
 	}
 
-	public void turnOff(boolean estado) {
-		return;
+	public void turnOff() {
+		if (tv.estado == true) {
+			tv.estado = false;
+		}
 	}
 	
-	public void CanalUp() {
+	/*public void CanalUp() {
 		if (tv.estado = true) {
 
 			while (tv.canal >= 1 && tv.canal <= 120) {
-				tv.canal += 1;
+				return;
 			}
 
 		}
+		tv.canal += 1;
 
+	}*/
+	
+	public void canalUp() {
+		if (tv.estado == false) {
+			return;
+		}
+		if (tv.canal >= 120) {
+			return;
+		}
+		++tv.canal;
 	}
 
+	/*public void CanalDown() {
+		if (tv.estado = true) {
+			while (tv.canal >= 1 && tv.canal <= 120) {
+				return;
+			}
+		}
+		tv.canal -= 1;
+
+	}*/
+	
 	public void CanalDown() {
-		if (tv.estado = true) {
-			while (tv.canal >= 1 && tv.canal <= 120) {
-				tv.canal -= 1;
-			}
+		if (tv.estado == false) {
+			return;
 		}
-
+		if (tv.canal <=1) {
+			return;
+		}
+		--tv.canal;
 	}
 
 	public void volumenUp() {
@@ -50,16 +74,31 @@ public class Control {
 		}
 	}
 	
+	public void setCanal(int canal) {
+		this.tv.canal = canal;
+	}
+	
 	public void enlazar(TV tv) {
 		this.tv = tv;
 		tv.control = this;
 	}
 	
-	void setEnlazar(TV tv) {
+	/*public void setEnlazar(TV tv) {
 		this.tv = tv;
 	}
 	
 	TV getEnlazar() {
 		return tv;
+	}*/
+	
+	public TV getTv() {
+		return this.tv;
+
 	}
+	
+	public void setTv(TV tv) {
+		this.tv = tv;
+	}
+	
+	
 }

@@ -3,12 +3,12 @@ package taller3.televisores;
 
 public class TV {
 	public Marca marca;
-	public int canal = 1;
+	public int canal = 1;  /////static
 	private int precio = 500;
 	public boolean estado;
 	public int volumen = 1;
 	public Control control;
-	private static TV numTV;
+	static  TV numTV;
 
 	public TV(Marca marca, boolean estado) {
 
@@ -72,7 +72,34 @@ public class TV {
 		this.canal = canal;
 	}
 
-	public void CanalUp() {
+	
+	
+	public static TV getnumTV() {
+		return numTV;
+	}
+	
+	public void setNumTV(TV numTV) {
+		this.numTV = numTV;
+	}
+	
+	public void turnOn() {
+		if (estado == false) {
+			estado = true;
+		}
+	}
+
+	public void turnOff() {
+		if (estado == true) {
+			estado = false;
+		}
+	}
+	
+	public boolean getEstado() {
+		return estado;
+
+	}
+	
+	/*public void CanalUp() {
 		if (estado = true) {
 
 			while (canal >= 1 && canal <= 120) {
@@ -81,34 +108,42 @@ public class TV {
 
 		}
 
+	}*/
+	
+	public void canalUp() {
+		if (estado == false) {
+			return;
+		}
+		if (canal >= 120) {
+			return;
+		}
+		++canal;
 	}
 
-	public void CanalDown() {
+
+	/*public void CanalDown() {
 		if (estado = true) {
 			while (canal >= 1 && canal <= 120) {
 				canal -= 1;
 			}
+		}*/
+	
+	public void CanalDown() {
+		if (estado == false) {
+			return;
 		}
-
-	}
-
-	public static TV getnumTV() {
-		return numTV;
-	}
-
-	boolean getEstado() {
-		return estado;
-
-	}
-
-	public void turnOn(boolean estado) {
-		if (estado) {
-			estado = true;
+		if (canal <=1) {
+			return;
 		}
+		--canal;
 	}
 
-	public void turnOff(boolean estado) {
-		return;
 	}
 
-}
+	
+
+	
+
+	
+
+
